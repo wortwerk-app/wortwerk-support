@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WortWerk — Support</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -20,12 +21,12 @@
     .hero {
       background: linear-gradient(135deg, #10221e, #173a32);
       color: white;
-      padding: 72px 24px;
+      padding: 64px 24px 54px;
       text-align: center;
     }
 
     .hero h1 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-size: 44px;
     }
 
@@ -35,10 +36,35 @@
       color: #d9e7e2;
     }
 
+    .language-switcher {
+      margin-top: 28px;
+      display: inline-flex;
+      background: rgba(255,255,255,0.12);
+      padding: 5px;
+      border-radius: 12px;
+      gap: 4px;
+    }
+
+    .language-switcher button {
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 9px;
+      cursor: pointer;
+    }
+
+    .language-switcher button.active {
+      background: white;
+      color: #173a32;
+    }
+
     .container {
       max-width: 760px;
       margin: 0 auto;
-      padding: 48px 24px 70px;
+      padding: 44px 24px 70px;
     }
 
     .card {
@@ -61,12 +87,20 @@
 
     .button {
       display: inline-block;
-      margin-top: 8px;
+      margin: 8px 0 8px;
       padding: 13px 20px;
       background: #1f6b58;
       color: white;
       text-decoration: none;
       border-radius: 12px;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
     }
 
     footer {
@@ -83,54 +117,103 @@
   <section class="hero">
     <h1>WortWerk</h1>
     <p>Deutsch lernen von A1 bis C2</p>
+
+    <div class="language-switcher">
+      <button id="ruBtn" class="active" onclick="setLanguage('ru')">RU</button>
+      <button id="enBtn" onclick="setLanguage('en')">EN</button>
+    </div>
   </section>
 
   <main class="container">
 
-    <div class="card">
-      <h2>Поддержка</h2>
-      <p>
-        Нужна помощь с приложением WortWerk? Напишите нам.
-        Мы постараемся ответить как можно скорее.
-      </p>
+    <!-- RUSSIAN -->
+    <div id="ru" class="lang-content active">
 
-      <a class="button" href="mailto:wortwerk.support@gmail.com">
-        Написать в поддержку
-      </a>
+      <div class="card">
+        <h2>Поддержка</h2>
+        <p>
+          Нужна помощь с приложением WortWerk?
+          Если у вас возник вопрос, проблема или предложение,
+          напишите нам. Мы постараемся ответить как можно скорее.
+        </p>
 
-      <p>
-        Email:
-        <a href="mailto:wortwerk.support@gmail.com">
-          wortwerk.support@gmail.com
+        <a class="button" href="mailto:wortwerk.support@gmail.com">
+          Написать в поддержку
         </a>
-      </p>
+
+        <p>
+          Email:
+          <a href="mailto:wortwerk.support@gmail.com">
+            wortwerk.support@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>О WortWerk</h2>
+        <p>
+          WortWerk — приложение для системного изучения немецкого языка
+          от A1 до C2.
+        </p>
+
+        <p>
+          Изучайте слова и грамматику, пользуйтесь словарём,
+          работайте с тематическими коллекциями и выбирайте разные
+          виды тренировок.
+        </p>
+
+        <p>
+          Вы можете добавлять собственные слова, повторять изученный
+          материал и заниматься в удобном темпе каждый день.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h2>О WortWerk</h2>
-      <p>
-        WortWerk — приложение для системного изучения немецкого языка
-        от A1 до C2: слова, грамматика, тематические коллекции,
-        словарь и различные виды тренировок.
-      </p>
-    </div>
+    <!-- ENGLISH -->
+    <div id="en" class="lang-content">
 
-    <div class="card">
-      <h2>Support</h2>
-      <p>
-        Need help with WortWerk? Contact us and we’ll be happy to assist you.
-      </p>
+      <div class="card">
+        <h2>Support</h2>
 
-      <a class="button" href="mailto:wortwerk.support@gmail.com">
-        Contact Support
-      </a>
+        <p>
+          Need help with WortWerk?
+          If you have a question, encounter a problem, or would like
+          to share feedback, contact us and we’ll be happy to help.
+        </p>
 
-      <p>
-        Email:
-        <a href="mailto:wortwerk.support@gmail.com">
-          wortwerk.support@gmail.com
+        <a class="button" href="mailto:wortwerk.support@gmail.com">
+          Contact Support
         </a>
-      </p>
+
+        <p>
+          Email:
+          <a href="mailto:wortwerk.support@gmail.com">
+            wortwerk.support@gmail.com
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>About WortWerk</h2>
+
+        <p>
+          WortWerk is an app for structured German learning
+          from A1 to C2.
+        </p>
+
+        <p>
+          Learn vocabulary and grammar, use the built-in dictionary,
+          explore thematic collections, and practise with different
+          types of exercises.
+        </p>
+
+        <p>
+          Add your own words, review previously learned material,
+          and study at your own pace every day.
+        </p>
+      </div>
+
     </div>
 
     <footer>
@@ -138,6 +221,21 @@
     </footer>
 
   </main>
+
+  <script>
+    function setLanguage(lang) {
+      document.getElementById('ru').classList.remove('active');
+      document.getElementById('en').classList.remove('active');
+
+      document.getElementById('ruBtn').classList.remove('active');
+      document.getElementById('enBtn').classList.remove('active');
+
+      document.getElementById(lang).classList.add('active');
+      document.getElementById(lang + 'Btn').classList.add('active');
+
+      document.documentElement.lang = lang;
+    }
+  </script>
 
 </body>
 </html>
